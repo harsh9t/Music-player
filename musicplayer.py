@@ -28,7 +28,7 @@ def lyricseek(song_name):
         soup1 = BeautifulSoup(urlopen(URL1))
 
 
-        text= soup1.find_all("p", class_="ui-annotatable", id="lyrics_text")
+        text= soup1.find_all("p", class_="ui-annotatable")
         text=str(text)
         
         text= text.replace("</p>]","")
