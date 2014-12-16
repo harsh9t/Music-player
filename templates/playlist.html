@@ -12,7 +12,7 @@
 	 <br><br>
 	
 	 <h3><a href='/'><font color="black"> Back </font></a></h3>
-	 <small>{{ lyriclist.pop(0) }}</small>
+	 <small>{{ lyriclist.pop(0)|linebreaks }}</small>
 	 
 	{% endfor %}
 {% endblock %}

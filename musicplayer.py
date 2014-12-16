@@ -26,8 +26,10 @@ def lyricseek(song_name):
         text=str(text)
         text= text.replace("</p>]","")
         text= text.replace('[<p class="ui-annotatable" id="lyrics_text">',"")
-        text=text.replace("<br/>","\n")
-       
+        #text=text.replace("<br/>","\n")
+        text=text.split("<br/>")
+        for row in text:
+                print row
         return text
         
 @app.route('/')

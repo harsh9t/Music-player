@@ -9,6 +9,8 @@
 	<br><br>
 	
 <h3><a href='/'><font color="black"> Back </font></a></h3>
-	<small>{{ text }}</small>
+	{% for row in text %}
+		<small>{{ row }}</small><br>
+	{% endfor %}
 	
 {% endblock %}
