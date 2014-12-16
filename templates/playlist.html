@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block play %}
+
+<h3> {{ title }} </h3>
+	
+	{% for i in range(length) %}
+       	 <audio controls autoplay>
+                <source src="static/music/{{ playlist.pop(i) }}" type="audio/mp3">
+                Your browser does not support this audio format.
+         </audio>
+	 <br><br>
+	
+	 <h3><a href='/'><font color="black"> Back </font></a></h3>
+	 <small>{{ lyriclist.pop(i) }}</small>
+	 
+	{% endfor %}
+{% endblock %}

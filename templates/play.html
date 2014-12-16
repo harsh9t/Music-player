@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block play %}
+<h3>Select a song to play or click on checkboxes to create playlist</h3><br><br>
+<form enctype="multipart/form-data" action="/playlist" method="post">
+{% for i in range(number_files) %}
+    <p> <input type="checkbox" name="checkboxname[{{i}}]"><a href= "/{{ music_files[i] }}"><font color="black"> {{ music_files[i] }}</font></input></a> </p>
+{% endfor %}<br><br>
+<h3>Create Playlist: <input type="submit" name="Create Playlist"></h3>
+</form>
+
+{% endblock %}
+
+
