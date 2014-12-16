@@ -11,7 +11,6 @@ def lyricseek(song_name):
         
         payload = {'search':song_name}
         r = requests.get('http://www.lyricsmode.com/search.php', params = payload)
-
         URL = r.url
         soup = BeautifulSoup(urlopen(URL))
         x=[]
@@ -19,18 +18,12 @@ def lyricseek(song_name):
              x.append(link.get('href'))
 
         a=x[-1]
-
-
-
-        r1 = requests.get('http://www.lyricsmode.com'+a)
-        
+        r1 = requests.get('http://www.lyricsmode.com'+a)        
         URL1 = r1.url
         soup1 = BeautifulSoup(urlopen(URL1))
 
-
         text= soup1.find_all("p", class_="ui-annotatable")
         text=str(text)
-        
         text= text.replace("</p>]","")
         text= text.replace('[<p class="ui-annotatable" id="lyrics_text">',"")
         text=text.replace("<br/>","\n")
