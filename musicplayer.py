@@ -58,7 +58,6 @@ def song(filename):
 
 @app.route('/playlist', methods=['POST'])
 def playlist():
-        print "here I am"
         music_files= os.listdir(music_dir)
 	number_files=0
 	myplaylist=[]
